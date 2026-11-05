@@ -99,5 +99,14 @@ def dev(
     )
 
 
+
+@app.command()
+def fanny():
+    try:
+        from open_webui.cli.agentic_cli import start_repl
+        start_repl()
+    except ImportError as e:
+        typer.echo(f"Could not load FannyMae CLI: {e}")
+
 if __name__ == '__main__':
     app()
